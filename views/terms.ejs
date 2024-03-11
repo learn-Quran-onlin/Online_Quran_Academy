@@ -151,5 +151,19 @@
     <script>
         document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
+
+<script>
+    // cookie
+      function setSecureCookie(cookieName, cookieValue, expirationDays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+          var expires = "expires=" + d.toUTCString();
+          // Add "Secure" attribute to make it secure
+          var secureFlag = "Secure";
+          document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/;" + secureFlag;
+      }
+      // Call the function to set a secure cookie
+      setSecureCookie("DarArqamCookie", "DarArqamValue", 30);
+  </script>
 </body>
 </html>

@@ -15,8 +15,8 @@ const lessons = new Map([
     2,
     {
       id: 2,
-      price: 42,
-      name: "30 Mins 2 Lessons",
+      price: 40,
+      name: "30 Mins 3 Lessons",
       lessonsPerWeek: 2,
       lessonsPerMonth: 8,
       frequency: 2,
@@ -27,7 +27,7 @@ const lessons = new Map([
     3,
     {
       id: 3,
-      price: 59,
+      price: 55,
       name: "30 Mins 3 Lessons",
       lessonsPerWeek: 3,
       lessonsPerMonth: 12,
@@ -39,7 +39,7 @@ const lessons = new Map([
     4,
     {
       id: 4,
-      price: 77,
+      price: 75,
       name: "30 Mins 4 Lessons",
       lessonsPerWeek: 4,
       lessonsPerMonth: 16,
@@ -51,7 +51,7 @@ const lessons = new Map([
     5,
     {
       id: 5,
-      price: 95,
+      price: 90,
       name: "30 Mins 5 Lessons",
       lessonsPerWeek: 5,
       lessonsPerMonth: 20,
@@ -60,22 +60,10 @@ const lessons = new Map([
     },
   ],
   [
-    6,
-    {
-      id: 6,
-      price: 110,
-      name: "30 Mins 6 Lessons",
-      lessonsPerWeek: 6,
-      lessonsPerMonth: 24,
-      frequency: 6,
-      time: 30,
-    },
-  ],
-  [
     7,
     {
       id: 7,
-      price: 42,
+      price: 40,
       name: "60 Mins 1 Lesson",
       lessonsPerWeek: 1,
       lessonsPerMonth: 4,
@@ -84,22 +72,10 @@ const lessons = new Map([
     },
   ],
   [
-    8,
-    {
-      id: 8,
-      price: 77,
-      name: "60 Mins 2 Lessons",
-      lessonsPerWeek: 2,
-      lessonsPerMonth: 8,
-      frequency: 2,
-      time: 60,
-    },
-  ],
-  [
     9,
     {
       id: 9,
-      price: 110,
+      price: 105,
       name: "60 Mins 3 Lessons",
       lessonsPerWeek: 3,
       lessonsPerMonth: 12,
@@ -111,7 +87,7 @@ const lessons = new Map([
     10,
     {
       id: 10,
-      price: 145,
+      price: 140,
       name: "60 Mins 4 Lessons",
       lessonsPerWeek: 4,
       lessonsPerMonth: 16,
@@ -123,26 +99,14 @@ const lessons = new Map([
     11,
     {
       id: 11,
-      price: 183,
+      price: 175,
       name: "60 Mins 5 Lessons",
       lessonsPerWeek: 5,
       lessonsPerMonth: 20,
       frequency: 5,
       time: 60,
     },
-  ],
-  [
-    12,
-    {
-      id: 12,
-      price: 216,
-      name: "60 Mins 6 Lessons",
-      lessonsPerWeek: 6,
-      lessonsPerMonth: 24,
-      frequency: 6,
-      time: 60,
-    },
-  ],
+  ]
 ]);
 
 module.exports = {

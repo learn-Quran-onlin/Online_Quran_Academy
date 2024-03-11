@@ -65,6 +65,7 @@ app.post("/send_email", function(req, res){
   var city = req.body.city;
   var age = req.body.age;
   var gender = req.body.gender;
+  var lessontime = req.body.lessontime;
 
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -78,7 +79,11 @@ app.post("/send_email", function(req, res){
     from: name,
     to: process.env.EMAIL,
     subject: "New Trial",
-    text: `Assalamu Alaikum, You Have a New Free Trial.\nName: ${name},\nEmail: ${email}\nPhone Number: ${phone}\nCountry: ${country}\nCity: ${city}\nAge: ${age}\nGender: ${gender}`,
+    text: `
+    Assalamu Alaikum, You Have a New Free Trial.\nName: ${name}
+    \nEmail: ${email}\nPhone Number: ${phone}\nCountry: ${country}
+    \nCity: ${city}\nAge: ${age}\nGender: ${gender}\nLesson time: ${lessontime}
+    `,
   }
 
   // Email sent to the student

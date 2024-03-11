@@ -5,8 +5,7 @@
   <title>Dar Arqam - Online Quran Academy</title>
   <meta charset="UTF-8" />
   <meta name="description"
-    content="Online Quran & Arabic tutors for private lessons. Learn Qur'an, 
-    Arabic, and Islamic Studies online with professional teachers.
+    content="Learn Qur'an, Arabic, and Islamic Studies online with expert tutors.
     Dar Arqam, where the timeless beauty of the Quran and the richness 
     of the Arabic language come alive in the digital realm." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +14,20 @@
   <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32" />
   <link rel="stylesheet" href="/css/homeStyle.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
   <script src="/javaScript/homeScript.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16468014061">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16468014061');
+</script>
+
 </head>
 
 <script>
@@ -30,6 +42,12 @@
   // Add event listeners to the navigation links
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll("nav ul li a");
+    const webLogo = document.getElementById("web-logo");
+    webLogo.addEventListener("click", function (event) {
+        event.preventDefault();
+        const targetSectionId = webLogo.getAttribute("href").substring(1);
+        scrollToSection(targetSectionId);
+    });
     navLinks.forEach(function (link) {
       link.addEventListener("click", function (event) {
         event.preventDefault();
@@ -64,120 +82,68 @@
     <section class="hero" id="hero">
       <h1>
         <b>
-          Online <span style="color: #7fffd4"> Quran</span> &
+          Learn <span style="color: #7fffd4"> Quran</span> &
           <span style="color: aquamarine">Arabic</span> <br />
-          tutors for private lessons <br />
+          Online with expert tutors<br />
         </b>
-        <b id="dar">Learn Quran, Islamic Studies, and Arabic with Professional Teachers</b>
+        <!-- <b id="dar">Learn Quran, Islamic Studies, and Arabic with Professional Teachers</b> -->
         <b id="dar1">Islamic Education Academy - Dar Arqam - Detailed with Knowledge</b>
         <a href="#registration"><button id="trialButton">Book a FREE Trial</button></a>
       </h1>
     </section>
 
-    <!-- Courses -->
-    <p id="courses"></p>
-    <div class="courses">
-    <h1 class="courses-headline">Our Courses</h1>
-    <div class="container1">
-      <div class="course">
-        <div class="course-title">Quran for kids</div>
-        <img src="images/course1.jpg" alt="Course 1" />
-        <div class="overlay">
-          <h3 class="sub-title">Recitation</h3>
-          <h3 class="sub-title">Explanation</h3>
-          <h3 class="sub-title">Memorization</h3>
-          <h3 class="sub-title">Tajweed</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
+    <!-- Questions section -->
+    <div class="question-page">
+      <div class="question-image-wrapper">
+          <div class="question-box">
+              <p class="question">Do you read the Qur’an but do not understand it?</p>
+          </div>
+          <div class="image-box">
+              <img src="images/q1.png" alt="Image 1">
+          </div>
       </div>
-      <div class="course">
-        <div class="course-title">Arabic for kids</div>
-        <img src="images/course3.jpeg" alt="Course 3" />
-        <div class="overlay">
-          <h3 class="sub-title">Reading</h3>
-          <h3 class="sub-title">Writing</h3>
-          <h3 class="sub-title">Conversation</h3>
-          <h3 class="sub-title">Grammar</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
+      <div class="question-image-wrapper">
+          <div class="image-box">
+              <img src="images/q3.png" alt="Image 3">
+          </div>
+          <div class="question-box">
+              <p class="question">Is your child learning the Qur’an but not acting upon it?</p>
+          </div>
       </div>
-      <div class="course">
-        <div class="course-title">Islamic studies</div>
-        <img src="images/course5.jpg" alt="Course 5" />
-        <div class="overlay">
-          <h3 class="sub-title">Aqeedah, Seerah</h3>
-          <h3 class="sub-title">Fiqh, Islamic Manners</h3>
-          <h3 class="sub-title">Daily Duaa</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
+      <div class="question-image-wrapper">
+          <div class="question-box">
+              <p class="question">Do you want to read the Quran with confidence?</p>
+          </div>
+          <div class="image-box">
+              <img src="images/q2.png" alt="Image 2">
+          </div>
       </div>
-      <div class="course">
-        <div class="course-title">Quran and Tajweed for adults</div>
-        <img src="images/course2.png" alt="Course 2" />
-        <div class="overlay">
-          <h3 class="sub-title">Recitation</h3>
-          <h3 class="sub-title">Tajweed</h3>
-          <h3 class="sub-title">Memorization</h3>
-          <h3 class="sub-title">Tafseer</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
+      <div class="question-image-wrapper">
+          <div class="image-box">
+              <img src="images/q5.png" alt="Image 5">
+          </div>
+          <div class="question-box">
+              <p class="question">Do you want to memorize the Quran with Tajweed?</p>
+          </div>
       </div>
-      <div class="course">
-        <div class="course-title">Tafseer of the Quran</div>
-        <img src="images/tafseer.png" alt="tafseer" />
-        <div class="overlay">
-          <h3 class="sub-title">Explanation of the Quran</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
+      <div class="question-image-wrapper">
+          <div class="question-box">
+              <p class="question">Do you need help to speak Arabic fluently?</p>
+          </div>
+          <div class="image-box">
+              <img src="images/q4.png" alt="Image 4">
+          </div>
       </div>
-      <div class="course">
-        <div class="course-title">Arabic for adults</div>
-        <img src="images/course4.jpg" alt="Course 4" />
-        <div class="overlay">
-          <h3 class="sub-title">Speaking</h3>
-          <h3 class="sub-title">Grammar</h3>
-          <h3 class="sub-title">Reading</h3>
-          <h3 class="sub-title">Writing</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
-      </div>
-      <div class="course">
-        <div class="course-title">Ijazah and Ten Qira'at</div>
-        <img src="images/Ijazah.jpeg" alt="Course 6" />
-        <div class="overlay">
-          <h3 class="sub-title">Recitation Ijazah</h3>
-          <h3 class="sub-title">Memorization Ijazah</h3>
-          <h3 class="sub-title">Ten Qira'at</h3>
-          <h4 class="one">(one-on-one)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
-      </div>
-      <!-- <div class="course">
-        <div class="course-title">Halaqah of Quran</div>
-        <img src="images/halaqah3.png" alt="Course 1" />
-        <div class="overlay">
-          <h3 class="sub-title">Halaqah of Quran</h3>
-          <h4 class="one">(group)</h4>
-          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
-        </div>
-      </div> -->
-    </div>
-    </div>
-    <div class="plans-button-container">
-      <!-- Button -->
-      <a href="https://dararqam.com/plans" class="plans-button">See our Plans</a>
-    </div>
+      <p class="answer">The Answer is</p>
+      <p class="answer1">Dar Arqam</p>
+  </div>
 
     <!-- Free Trial Registration -->
-    <section class="registration" id="registration">
+    <p id="registration"></p>
+    <br><br>
+    <section class="registration">
       <form action="/send_email" method="POST">
-        <h1 class="Trial-headline">Free Trial Registration</h1>
+        <h1 class="Trial-headline">Get your free trial NOW!</h1>
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" required />
@@ -224,6 +190,11 @@
           </div>
         </div>
 
+        <!-- <div class="form-group">
+          <label for="lessontime">Choose a suitable time for the lesson: </label>
+          <input type="datetime-local" id="lessontime" name="lessontime" required>
+        </div> -->
+
         <input type="submit" value="Submit" />
       </form>
 
@@ -256,6 +227,108 @@
       </div>
     </section>
 
+    <!-- Courses -->
+    <p id="course"></p>
+    <br><br>
+    <div class="courses">
+    <h1 class="courses-headline">Our Courses</h1>
+    <div class="container1">
+      <div class="course">
+        <div class="course-title">Quran Courses</div>
+        <img src="images/course1.jpg" alt="Course 1" />
+        <div class="overlay">
+          <h3 class="sub-title">Recitation</h3>
+          <h3 class="sub-title">Explanation</h3>
+          <h3 class="sub-title">Memorization</h3>
+          <h3 class="sub-title">Tajweed</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div>
+      <div class="course">
+        <div class="course-title">Islamic studies</div>
+        <img src="images/course5.jpg" alt="Course 5" />
+        <div class="overlay">
+          <h3 class="sub-title">Aqeedah, Seerah</h3>
+          <h3 class="sub-title">Fiqh, Daily Duaa</h3>
+          <h3 class="sub-title">Islamic Manners</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div>
+      <div class="course">
+        <div class="course-title">Arabic Courses</div>
+        <img src="images/course3.jpeg" alt="Course 3" />
+        <div class="overlay">
+          <h3 class="sub-title">Reading</h3>
+          <h3 class="sub-title">Writing</h3>
+          <h3 class="sub-title">Conversation</h3>
+          <h3 class="sub-title">Grammar</h3>
+          <h3 class="sub-title">Fusha</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div>
+      <!-- <div class="course">
+        <div class="course-title">Quran and Tajweed for adults</div>
+        <img src="images/course2.png" alt="Course 2" />
+        <div class="overlay">
+          <h3 class="sub-title">Recitation</h3>
+          <h3 class="sub-title">Tajweed</h3>
+          <h3 class="sub-title">Memorization</h3>
+          <h3 class="sub-title">Tafseer</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div> -->
+      <!-- <div class="course">
+        <div class="course-title">Tafseer of the Quran</div>
+        <img src="images/tafseer.png" alt="tafseer" />
+        <div class="overlay">
+          <h3 class="sub-title">Explanation of the Quran</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div>
+      <div class="course">
+        <div class="course-title">Arabic for adults</div>
+        <img src="images/course4.jpg" alt="Course 4" />
+        <div class="overlay">
+          <h3 class="sub-title">Speaking</h3>
+          <h3 class="sub-title">Grammar</h3>
+          <h3 class="sub-title">Reading</h3>
+          <h3 class="sub-title">Writing</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div> -->
+      <div class="course">
+        <div class="course-title">Ijazah and Ten Qira'at</div>
+        <img src="images/Ijazah.jpeg" alt="Course 6" />
+        <div class="overlay">
+          <h3 class="sub-title">Memorization Ijazah</h3>
+          <h3 class="sub-title">Recitation Ijazah</h3>
+          <h3 class="sub-title">Ten Qira'at</h3>
+          <h4 class="one">(one-on-one)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div>
+      <!-- <div class="course">
+        <div class="course-title">Halaqah of Quran</div>
+        <img src="images/halaqah3.png" alt="Course 1" />
+        <div class="overlay">
+          <h3 class="sub-title">Halaqah of Quran</h3>
+          <h4 class="one">(group)</h4>
+          <a href="#registration"><button class="courTriButt">Free Trial</button></a>
+        </div>
+      </div> -->
+    </div>
+    </div>
+    <div class="plans-button-container">
+      <a href="https://dararqam.com/plans" class="plans-button">See our Plans</a>
+    </div>
+
+    <!-- About Section -->
     <section class="about-section" id="about">
       <div class="content">
         <h2 class="about">About Us</h2>
@@ -366,8 +439,23 @@
           smoothScroll("#registration", 1000); // Smooth scroll to the target section
         });
       });
+      
       </script>
       <script src="/javaScript/homeScript.js"></script>
+
+      <script>
+        // cookie
+          function setSecureCookie(cookieName, cookieValue, expirationDays) {
+              var d = new Date();
+              d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+              var expires = "expires=" + d.toUTCString();
+              // Add "Secure" attribute to make it secure
+              var secureFlag = "Secure";
+              document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/;" + secureFlag;
+          }
+          // Call the function to set a secure cookie
+          setSecureCookie("DarArqamCookie", "DarArqamValue", 30);
+      </script>
 
 </body>
 </html>
