@@ -201,8 +201,59 @@
       <div id="hover-message">Successfully Registered. We will contact you.</div>
 
       <script>
+          function validateForm() {
+          var name = document.getElementById('name').value;
+          var country = document.getElementById('country').value;
+          var city = document.getElementById('city').value;
+
+          var lettersWithSpaces = /^[A-Za-z\s]+$/;
+
+          if (!name.match(lettersWithSpaces)) {
+            alert('Please enter only letters and spaces for Full Name');
+            return false;
+          }
+
+          if (!country.match(lettersWithSpaces)) {
+            alert('Please enter only letters and spaces for Country');
+            return false;
+          }
+
+          if (!city.match(lettersWithSpaces)) {
+            alert('Please enter only letters and spaces for City');
+            return false;
+          }
+
+          return true;
+        }
+
+        // Prevent entering symbols or numbers
+        document.addEventListener('DOMContentLoaded', function() {
+          var nameField = document.getElementById('name');
+          var countryField = document.getElementById('country');
+          var cityField = document.getElementById('city');
+
+          nameField.addEventListener('input', function(event) {
+            if (!/^[A-Za-z\s]*$/.test(event.target.value)) {
+              event.target.value = event.target.value.replace(/[^A-Za-z\s]/g, '');
+            }
+          });
+
+          countryField.addEventListener('input', function(event) {
+            if (!/^[A-Za-z\s]*$/.test(event.target.value)) {
+              event.target.value = event.target.value.replace(/[^A-Za-z\s]/g, '');
+            }
+          });
+
+          cityField.addEventListener('input', function(event) {
+            if (!/^[A-Za-z\s]*$/.test(event.target.value)) {
+              event.target.value = event.target.value.replace(/[^A-Za-z\s]/g, '');
+            }
+          });
+        });
+
+         // Show the hover message
         document.getElementById("registration").addEventListener("submit", function(event) {    
-            // Show the hover message
+           
             document.getElementById("hover-message").style.display = "block";
     
             // You can add additional logic here, such as sending the form data to the server using AJAX

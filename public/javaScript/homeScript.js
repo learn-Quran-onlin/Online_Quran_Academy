@@ -25,3 +25,27 @@ navbarToggle.addEventListener("click", function () {
   navbar.classList.toggle("navbar--open");
 });
 
+function validateForm() {
+  var name = document.getElementById('name').value;
+  var country = document.getElementById('country').value;
+  var city = document.getElementById('city').value;
+
+  var letters = /^[A-Za-z]+$/;
+
+  if (!name.match(letters)) {
+    alert('Please enter only letters for Full Name');
+    return false;
+  }
+
+  if (!country.match(letters)) {
+    alert('Please enter only letters for Country');
+    return false;
+  }
+
+  if (!city.match(letters)) {
+    alert('Please enter only letters for City');
+    return false;
+  }
+
+  return true;
+}

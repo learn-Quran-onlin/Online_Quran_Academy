@@ -87,23 +87,23 @@ app.post("/send_email", function(req, res){
   }
 
   // Email sent to the student
-  var studentMailOptions = {
-    from: name,
-    to: email,
-    subject: "Welcome to Dar Arqam",
-    html: `
-    <div style="background-color: #f0efef; padding: 20px; ">
-      <div style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 5px; background-color: #ffffff;">
-        <p>Assalamu Alaykum, ${name}. Welcome to Dar Arqam!</p>
-        <p style="text-align: center; font-size: 17px;">We will contact you shortly to schedule your free trial lesson.</p>
-        <p>Jazak Allah Khayran.</p>
-        <p style="font-family: 'Old English Text MT', 'Old English'; font-size: 24px;">
-          <a href="https://dararqam.com" target="_blank" style="text-decoration: none; color: #800080;">Dar Arqam</a>
-        </p>
-      </div>
-    </div>
-    `,
-  };
+  // var studentMailOptions = {
+  //   from: name,
+  //   to: email,
+  //   subject: "Welcome to Dar Arqam",
+  //   html: `
+  //   <div style="background-color: #f0efef; padding: 20px; ">
+  //     <div style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 5px; background-color: #ffffff;">
+  //       <p>Assalamu Alaykum, ${name}. Welcome to Dar Arqam!</p>
+  //       <p style="text-align: center; font-size: 17px;">We will contact you shortly to schedule your free trial lesson.</p>
+  //       <p>Jazak Allah Khayran.</p>
+  //       <p style="font-family: 'Old English Text MT', 'Old English'; font-size: 24px;">
+  //         <a href="https://dararqam.com" target="_blank" style="text-decoration: none; color: #800080;">Dar Arqam</a>
+  //       </p>
+  //     </div>
+  //   </div>
+  //   `,
+  // };
 
   // Send emails
   transporter.sendMail(darArqamMailOptions, function (error1, info1) {
