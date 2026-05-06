@@ -1,18 +1,27 @@
 <nav>
     <div class="logo">
         <a id="web-logo" href="#hero"><img src="images/logo.png" alt="Dar Arqam Logo" /></a>
-        <a id="web-name" href="https://dararqam.com"  ><img src="images/dararqam.png" style="height: 34px; width: 135px;" alt="Dar Arqam" /></a>
+        <a id="web-name" href="/">Dar Arqam</a>
     </div>
 
     <button class="menu-button"><i class="fa fa-2xl fa-bars"></i></button>
 
     <ul class="nav-links">
+        <a href="https://wa.me/201070235903" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
         <li><a href="#about">About</a></li>
         <li><a href="#course">Courses</a></li>
-        <a href="/plans" target="_blank">Plans</a>
-        <li><a href="#registration">Contact</a></li>
+        <a href="/tuitions">Tuitions</a>
+        <li><a href="#" id="contactLink">Contact</a></li>
+        <a href="/trial"><button id="trialButton2">TRY FOR FREE</button></a>
         <!-- <li><a href="#" id="login">Login</a></li> -->
         <!-- <li><a href="#" id="register">Sign Up</a></li> -->
     </ul>
-    
+    <script>
+        document.getElementById("contactLink").addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default anchor behavior
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        });
+    </script>
 </nav>

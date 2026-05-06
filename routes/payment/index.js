@@ -34,16 +34,18 @@ const createOrderRoute = async (req, res) => {
     const months = Number(req.body.months);
     lessonOriginalPrice = lessonOriginalPrice * months;
 
-    let discountedPrice = lessonOriginalPrice;
-    if (months == 12) {
-      discountedPrice = Math.floor(lessonOriginalPrice * 0.85); // 15% discount
-    } else if (months >= 6) {
-      discountedPrice = Math.floor(lessonOriginalPrice * 0.93); // 7% discount
-    }
+    // let discountedPrice = lessonOriginalPrice;
+    // if (months == 12) {
+    //   discountedPrice = Math.floor(lessonOriginalPrice * 0.85); // 15% discount
+    // } else if (months >= 6) {
+    //   discountedPrice = Math.floor(lessonOriginalPrice * 0.93); // 7% discount
+    // } else if (months >= 3) {
+    //   discountedPrice = Math.floor(lessonOriginalPrice * 0.97); // 3% discount
+    // }
 
-    const processingFees = Number((discountedPrice * 0.05).toFixed(2)); // Paypal Fees
+    const processingFees = Number((lessonOriginalPrice * 0.05).toFixed(2)); // Paypal Fees
 
-    const total = (discountedPrice) + (processingFees);
+    const total = (lessonOriginalPrice) + (processingFees);
 
     request.prefer("return=representation");
     request.requestBody({

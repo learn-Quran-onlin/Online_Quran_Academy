@@ -11,6 +11,7 @@
     <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="/css/paymentStyle.css" />
 
+
     <style>
         h2 {
             font-size: 20px;
@@ -21,6 +22,15 @@
             font-size: 16px;
             text-align: center;
             font-weight: bold;
+        }
+        h5 {
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+        }
+        h6 {
+            font-size: 12px;
+            text-align: center;   
         }
 
         select {
@@ -52,17 +62,9 @@
             /* Apply strikethrough for discounted price */
         }
 
-        /* Style for Subtotal, processing fee, and Total */
-        .container p {
-            text-align: left;
-        }
+ 
 
-        /* Style for Subtotal, processing fee, and Total values */
-        .value {
-            text-align: right;
-        }
-
-        #total {
+        #subtotal {
             font-weight: bold;
         }
 
@@ -103,9 +105,48 @@
         }
     </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const lessonFrequency = document.getElementById('lessonFrequency');
+        const lessonsPerMonthElement = document.getElementById('lessonsPerMonth');
+        const months = document.getElementById('months');
+        const originalPrice = document.getElementById('originalPrice');
+        const processingFeeElement = document.getElementById('processingFee');
+        const total = document.getElementById('total');
+        
+        function calculateLessonsPerMonth() {
+            return parseInt(lessonFrequency.value) * 4;
+        }
+
+        function calculatetotal() {
+            const lessonsPerMonth = calculateLessonsPerMonth();
+            const numberOfMonths = parseInt(months.value);
+            return 4 * lessonsPerMonth * numberOfMonths;
+        }
+
+        function updateValues() {
+            const lessonsPerMonth = calculateLessonsPerMonth();
+            const total = calculatetotal();
+            
+            lessonsPerMonthElement.textContent = `Lessons Per Month: ${lessonsPerMonth}`;
+            originalPrice.textContent = `$${total}`; // Assuming originalPrice represents the total
+            
+            const totalAmount = total + parseFloat(processingFeeAmount);
+            total.textContent = `$${totalAmount}`;
+        }
+
+        lessonFrequency.addEventListener('change', updateValues);
+        months.addEventListener('change', updateValues);
+
+        // Initialize values on page load
+        updateValues();
+    });
+</script>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <%- include("layout/header") -%>
 
     <div class="container">
 
@@ -121,15 +162,35 @@
                                         border-radius: 10px;
                                         background-color: #f3f6f9;
                                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                    <h2 id="selectedLesson">Plan: <%= lesson.name %>
-                    </h2>
+                    <!-- <h2 id="selectedLesson">Plan: <%= lesson.name %></h2> -->
+                    <h5>US$ 4 per Lesson</h5>
+                    <h6>(30 Minutes Lesson)</h6>
                     <br>
-                    <h4 id="lessonFrequency">Lessons Per Week: <%= lesson.frequency %>
-                    </h4>
+                    <label for="lessonFrequency">Select the number of lessons per week:</label>
+                    <select id="lessonFrequency">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
                     <br>
-                    <h4 id="lessonsPerMonth">Lessons Per Month: <%= lesson.lessonsPerMonth %>
-                    </h4>
+                    <!-- <h4 id="lessonFrequency">Lessons Per Week: <%= lesson.frequency %></h4> -->
+                    
                     <br>
+                    <h4 id="lessonsPerMonth">Lessons Per Month: 4 </h4>
+                    <br>
+                    
+                    <!-- <h4 id="price">Fees Per Month: $<%= lesson.price %></h4> -->
+                    <br>
+                
                     <label for="months">Select the number of months:</label>
                     <select id="months">
                         <option value="1">1</option>
@@ -147,15 +208,12 @@
                     </select>
                     <p style="font-size: 14px; color: #666;">(Month = 4 Weeks)</p>
                     
-                    <label class="discount-label" id="save3Label" style="text-align: center;">Save 3% (3+ months)</label>
-                    <label class="discount-label" id="save7Label" style="text-align: center;">Save 7% (6+ months)</label>
-                    <label class="discount-label" id="save15Label" style="text-align: center;">Save 15% (12 months)</label>
                     <br>
                     <hr>
-                    <p>Subtotal: <span id="originalPrice" class="original-price value"></span><span
+                    <p style="font-weight: bold; color: rgb(224, 9, 224); font-size: 17px;">Total: <span id="originalPrice" class="original-price value"></span><span
                             id="discountedPriceValue" class="discounted-price value"></span></p>
-                    <p>Processing Fee: <span id="processingFee" class="value"></span></p>
-                    <p style="color: rgb(224, 9, 224); font-size: 17px;"><b>Total:</b> <span id="total" class="value"></span></p>
+                    
+                    <!-- <p style="color: rgb(224, 9, 224); font-size: 17px;"><b>Total:</b> <span id="total" class="value"></span></p> -->
                 </div>
 
                 <div class="col">
@@ -186,9 +244,6 @@
                     <div>
                         <p>Press the PayPal button to continue purchasing</p>
                     </div>
-
-                    <!-- Do not use paypal smart buttons as they are only for donations not with no backend support (it's supports only webhooks interactions, but you have already used the paypal SDK) -->
-                    <!-- <div id="paypal"></div> -->
                     <div>
                         <button type="submit" id="payment-button">Pay With Paypal</button>
                     </div>
@@ -198,100 +253,41 @@
 
     </div>
     <script>
-        const total = document.getElementById("total");
-        console.log({ total });
-        const price = <%= lesson.price %>;
-
-        const monthsSelect = document.getElementById("months");
-        const save3Label = document.getElementById("save3Label");
-        const save7Label = document.getElementById("save7Label");
-        const save15Label = document.getElementById("save15Label");
-        const originalPriceElement = document.getElementById("originalPrice");
-        const discountedPriceElement = document.getElementById("discountedPriceValue");
-        const processingFeeElement = document.getElementById("processingFee");
-        const totalElement = document.getElementById("total");
-
-        const qauantityHiddenField = document.querySelector("[name='months']");
-
-        // Add an event listener to the months select box
-        monthsSelect.addEventListener("change", updateResult);
-
-        // Function to update the result and label colors based on user input
-        function updateResult() {
-            const selectedMonths = parseInt(monthsSelect.value);
-            qauantityHiddenField.value = selectedMonths // add months to the fields to use it in the backend.
-
-            let originalPrice = selectedMonths * price;
-            let discountedPrice = originalPrice;
-
-
-            // Calculate originalPrice based on the selected card's price
-
-            if (selectedMonths >= 3 && selectedMonths <= 5) {
-                discountedPrice = Math.floor(originalPrice * 0.97); // 3% discount
-                save3Label.classList.add("purple");
-                save7Label.classList.remove("purple");
-                save15Label.classList.remove("purple");
-                originalPriceElement.classList.add("discount-applied"); // Apply strikethrough
-            } else if (selectedMonths >= 6 && selectedMonths <= 11) {
-                discountedPrice = Math.floor(originalPrice * 0.93); // 7% discount
-                save7Label.classList.add("purple");
-                save3Label.classList.remove("purple");
-                save15Label.classList.remove("purple");
-                originalPriceElement.classList.add("discount-applied"); // Apply strikethrough
-            } else if (selectedMonths === 12) {
-                discountedPrice = Math.floor(originalPrice * 0.85); // 15% discount
-                save7Label.classList.remove("purple");
-                save3Label.classList.remove("purple");
-                save15Label.classList.add("purple");
-                originalPriceElement.classList.add("discount-applied"); // Apply strikethrough
-            } else {
-                save3Label.classList.remove("purple");
-                save7Label.classList.remove("purple");
-                save15Label.classList.remove("purple");
-                originalPriceElement.classList.remove("discount-applied"); // Remove strikethrough
+        document.addEventListener('DOMContentLoaded', function () {
+            const lessonFrequency = document.getElementById('lessonFrequency');
+            const lessonsPerMonthElement = document.getElementById('lessonsPerMonth');
+            const months = document.getElementById('months');
+            const originalPrice = document.getElementById('originalPrice');
+            const total = document.getElementById('total');
+            
+            function calculateLessonsPerMonth() {
+                return parseInt(lessonFrequency.value) * 4;
             }
-
-            // Round down the original price to remove decimal places
-            originalPrice = Math.floor(originalPrice);
-
-            // Round down the discounted price to remove decimal places
-            discountedPrice = Math.floor(discountedPrice);
-
-            originalPriceElement.textContent = ` $${originalPrice}`; // Add dollar sign and display as an integer
-
-            // Calculate the processing fee for PayPal (5% of the discounted price)
-            const processingFee = (discountedPrice * 0.05).toFixed(2);
-            processingFeeElement.textContent = ` $${processingFee}`; // Add dollar sign and two decimal places
-
-            // Calculate the total (discounted price + processing fee)
-            const total = (Number(discountedPrice) + Number(processingFee)).toFixed(2);
-            totalElement.textContent = ` $${total}`; // Add dollar sign and two decimal places
-
-            if (discountedPrice !== originalPrice) {
-                discountedPriceElement.textContent = ` $${discountedPrice}`; // Add dollar sign and display as an integer
-                discountedPriceElement.style.display = "inline"; // Show the discounted price
-            } else {
-                discountedPriceElement.style.display = "none"; // Hide the discounted price if no discount
+    
+            function calculateSubtotal() {
+                const lessonsPerMonth = calculateLessonsPerMonth();
+                const numberOfMonths = parseInt(months.value);
+                return 4 * lessonsPerMonth * numberOfMonths;
             }
-        }
-
-        // Initial calculation on page load
-        // Add an event listener to each card to toggle the 'active' class
-        const cardLinks = document.querySelectorAll('.card-container a');
-        cardLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Remove 'active' class from all links
-                cardLinks.forEach(link => link.classList.remove('active'));
-                // Add 'active' class to the clicked link
-                link.classList.add('active');
-                // Update the result based on the selected card
-                updateResult();
-            });
+    
+            function updateValues() {
+                const lessonsPerMonth = calculateLessonsPerMonth();
+                const subtotal = calculateSubtotal();
+                
+                lessonsPerMonthElement.textContent = `Lessons Per Month: ${lessonsPerMonth}`;
+                originalPrice.textContent = `$${subtotal.toFixed(2)}`; // Show the subtotal
+                
+                // Set the total directly as the subtotal
+                total.textContent = `$${subtotal.toFixed(2)}`;
+            }
+    
+            lessonFrequency.addEventListener('change', updateValues);
+            months.addEventListener('change', updateValues);
+    
+            // Initialize values on page load
+            updateValues();
         });
-        // Initial calculation on page load
-        updateResult();
-    </script>
+    </script>    
 
 <script>
     // cookie
@@ -306,7 +302,7 @@
       // Call the function to set a secure cookie
       setSecureCookie("DarArqamCookie", "DarArqamValue", 30);
   </script>
-  
+
 </body>
 
 </html>

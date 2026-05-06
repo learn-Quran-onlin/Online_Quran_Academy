@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tuition Fees - Dar Arqam</title>
+        <meta charset="UTF-8" />
+        <meta name="description"
+          content="Plans of Dar Arqam" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="images/favicon.ico" type="image/ico" />
+        <link rel="icon" href="images/favicon-16x16.png" type="image/ico" sizes="16x16" />
+        <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="stylesheet" href="/css/homeStyle.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <script src="/javaScript/homeScript.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16468014061">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16468014061');
+</script>
+    </head>
+    <body>
+      <nav>
+        <div class="logo">
+            <a id="web-logo" href="#hero"><img src="images/logo.png" alt="Dar Arqam Logo" /></a>
+            <a id="web-name" href="/">Dar Arqam</a>
+        </div>
+    
+        <button class="menu-button"><i class="fa fa-2xl fa-bars"></i></button>
+    
+        <ul class="nav-links">
+            <a href="https://wa.me/201070235903" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <li><a href="#about">About</a></li>
+            <li><a href="#course">Courses</a></li>
+            <a href="/tuitions">Tuitions</a>
+            <li><a href="#" id="contactLink">Contact</a></li>
+            <a href="/trial"><button id="trialButton2">TRY FOR FREE</button></a>
+            <!-- <li><a href="#" id="login">Login</a></li> -->
+            <!-- <li><a href="#" id="register">Sign Up</a></li> -->
+        </ul>
+        <script>
+            document.getElementById("contactLink").addEventListener("click", function (event) {
+              event.preventDefault(); // Prevent default anchor behavior
+              window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            });
+        </script>
+    </nav>
+
+    <!-- Plans -->
+    <section class="packages-section" id="plans">
+      <div class="bless-sentence">
+        <p>We are blessed and honored to be serving Muslims worldwide through Quality, Dedication, and Innovation.</p>
+        <p>Join us and learn with our Expert Teachers</p>
+      </div>
+      <!-- <h2 class="packages-header">Our Plans</h2> -->
+    </div>
+    <div class="headline">
+      <i class="fas fa-clock clock-icon"></i>
+      30 Mins Lesson
+    </div>   
+    <div class="headline">
+      <i class="fas fa-clock clock-icon"></i>
+      45 Mins Lesson
+    </div>
+    <div class="headline">
+      <i class="fas fa-clock clock-icon"></i>
+      60 Mins Lesson
+    </div>
+    <div class="card-container">
+      <% lessons.filter(lesson=> lesson.time == 30).forEach(lesson => { %>
+        <a href="/payment?lessonId=<%= lesson.id %>" target="_blank" data-price="<%= lesson.price %>">
+          <div class="card" id="<%= lesson.id %>">
+            <div class="part1">
+              <b>
+                Limited Time: 20% OFF
+              </b>
+            </div>
+            <div class="part2">
+              <div class="lessonprice">
+                US$ <del>10</del>
+                <span style="font-size: 40px; font-weight: bold">
+                  <%= lesson.lessonprice %>
+                </span>
+                / Hour
+              </div>
+            </div>
+            <div class="part3">
+              1-on-1 Online lessons
+            </div>
+          </div>
+        </a>
+        <% }); %>
+    </div>
+    <div class="packages-subheader">
+      <p>Customize your plan according to your needs with flexible lesson rate</p>
+      <p>Select the number of lessons per week and the duration in months</p>
+   </div>
+  </section>
+      <!-- 30 Mins Lesson
+      <div class="headline">
+        <i class="fas fa-clock clock-icon"></i>
+        30 Mins Lesson
+      </div>
+      <div class="card-container">
+        <% lessons.filter(lesson=> lesson.time == 30).forEach(lesson => { %>
+          <a href="/payment?lessonId=<%= lesson.id %>" target="_blank" data-price="<%= lesson.price %>">
+            <div class="card" id="<%= lesson.id %>">
+              <div class="part1">
+                <b>
+                  <%= lesson.lessonsPerWeek %> Lesson / Week
+                </b>
+              </div>
+              <div class="part2">
+                <div class="price">
+                  US$
+                  <span style="font-size: 40px; font-weight: bold">
+                    <%= lesson.price %>
+                  </span>
+                  / Month
+                </div>
+              </div>
+              <div class="part3">
+                <%= lesson.lessonsPerMonth %> Lessons / Month
+              </div>
+              <div class="part6">
+                <p>
+                  <b><span style="color: #fd0000">Save 3%</span></b><br />3 months = US$ <del>
+                    <%= lesson.price * 3 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 3) - ((lesson.price * 3) * 0.03)) %>
+                  </b>
+                </p>
+              </div>
+              <div class="part4">
+                <p>
+                  <b><span style="color: #fd0000">Save 7%</span></b><br />6 months = US$ <del>
+                    <%= lesson.price * 6 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 6) - ((lesson.price * 6) * 0.07)) %>
+                  </b>
+                </p>
+              </div>
+              <div class="part5">
+                <p>
+                  <b><span style="color: #fd0000">Save 15%</span></b><br />12 months = US$ <del>
+                    <%= lesson.price * 12 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 12) - ((lesson.price * 12) * 0.15)) %>
+                  </b>
+                </p>
+              </div>
+            </div>
+          </a>
+          <% }); %>
+      </div>
+      <br />
+
+       60 Mins Lesson 
+      <div class="headline">
+        <i class="fas fa-clock clock-icon"></i>
+        60 Mins Lesson
+      </div>
+      <div class="card-container">
+        <% lessons.filter(lesson=> lesson.time == 60).forEach(lesson => { %>
+          <a href="/payment?lessonId=<%= lesson.id %>" target="_blank" data-price="<%= lesson.price %>">
+            <div class="card" id="<%= lesson.id %>">
+              <div class="part1">
+                <b>
+                  <%= lesson.lessonsPerWeek %> Lesson / Week
+                </b>
+              </div>
+              <div class="part2">
+                <div class="price">
+                  US$
+                  <span style="font-size: 40px; font-weight: bold">
+                    <%= lesson.price %>
+                  </span>
+                  / Month
+                </div>
+              </div>
+              <div class="part3">
+                <%= lesson.lessonsPerMonth %> Lessons / Month
+              </div>
+              <div class="part6">
+                <p>
+                  <b><span style="color: #fd0000">Save 3%</span></b><br />3 months = US$ <del>
+                    <%= lesson.price * 3 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 3) - ((lesson.price * 3) * 0.03)) %>
+                  </b>
+                </p>
+              </div>
+              <div class="part4">
+                <p>
+                  <b><span style="color: #fd0000">Save 7%</span></b><br />6 months = US$ <del>
+                    <%= lesson.price * 6 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 6) - ((lesson.price * 6) * 0.07)) %>
+                  </b>
+                </p>
+              </div>
+              <div class="part5">
+                <p>
+                  <b><span style="color: #fd0000">Save 15%</span></b><br />12 months = US$ <del>
+                    <%= lesson.price * 12 %>
+                  </del>
+                  <b>
+                    <%= Math.floor((lesson.price * 12) - ((lesson.price * 12) * 0.15)) %>
+                  </b>
+                </p>
+              </div>
+            </div>
+          </a>
+          <% }); %>
+      </div>
+     -->
+    <br><br>
+    <%- include("layout/footer") -%>
+  
+    <script>
+      // cookie
+        function setSecureCookie(cookieName, cookieValue, expirationDays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            // Add "Secure" attribute to make it secure
+            var secureFlag = "Secure";
+            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/;" + secureFlag;
+        }
+        // Call the function to set a secure cookie
+        setSecureCookie("DarArqamCookie", "DarArqamValue", 30);
+    </script>
+    </body>
+
+</html>
