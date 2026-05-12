@@ -435,20 +435,6 @@
     <!-- Scripts -->
     <script>
 
-        // Load Header
-        fetch('/layout/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-
-        // Load Footer
-        fetch('/layout/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-
         // Share Buttons
         const pageUrl = encodeURIComponent(window.location.href);
         const pageTitle = encodeURIComponent(document.title);
@@ -488,6 +474,22 @@
 
         });
 
+    </script>
+
+    <div id="footer"></div>
+
+    <script>
+    fetch("../header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+    });
+
+    fetch("../footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
     </script>
 
 </body>
