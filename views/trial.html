@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Free Trial Lesson - Dar Arqam</title>
+
+  <meta
+    name="description"
+    content="Book your free trial Quran, Arabic, or Islamic Studies lesson online with expert tutors at Dar Arqam."
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/homeStyle.css" />
+
+  <!-- Fonts & Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Scripts -->
+  <script defer src="/javaScript/homeScript.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16468014061"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "AW-16468014061");
+  </script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <%- include("layout/header") -%>
+
+  <!-- Hero -->
+  <section class="promo-text">
+    <h1>
+      <span class="dar-arqam">Dar Arqam</span>
+      Offers Free Evaluation Sessions!
+    </h1>
+
+    <p class="description">
+      Fill out the form below to schedule your free trial class.
+    </p>
+
+    <p class="confidential">
+      🔒 Your information will remain confidential and never be shared with third parties.
+    </p>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="registration">
+
+    <form
+      id="registration_form"
+      action="/send_email"
+      method="POST"
+    >
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="name">
+          Full Name:
+          <span style="color: red;">*</span>
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <!-- Email & Phone -->
+      <div class="form-group">
+
+        <div class="input-field">
+          <label for="email">
+            Email:
+            <span style="color: red;">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="input-field">
+          <label for="phone">
+            Phone Number:
+            <span style="color: red;">*</span>
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+          />
+        </div>
+
+      </div>
+
+      <!-- Country & City -->
+      <div class="form-group">
+
+        <div class="input-field">
+          <label for="country">
+            Country:
+            <span style="color: red;">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="country"
+            name="country"
+            required
+          />
+        </div>
+
+        <div class="input-field">
+          <label for="city">
+            City:
+            <span style="color: red;">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="city"
+            name="city"
+            required
+          />
+        </div>
+
+      </div>
+
+      <!-- Age & Gender -->
+      <div class="form-group">
+
+        <div class="input-field">
+          <label for="age">
+            Student Age:
+            <span style="color: red;">*</span>
+          </label>
+
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="3"
+            required
+          />
+        </div>
+
+        <div class="gender">
+
+          <label>
+            Gender:
+            <span style="color: red;">*</span>
+          </label>
+
+          <div class="gend">
+
+            <label for="male">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              Male
+            </label>
+
+            <label for="female">
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+                required
+              />
+              Female
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Course Selection -->
+      <div class="form-group">
+
+        <label for="course">
+          Course:
+          <span style="color: red;">*</span>
+        </label>
+
+        <select id="course">
+
+          <option value="" disabled selected>
+            Choose courses
+          </option>
+
+          <option value="Quranic Arabic Course">Quranic Arabic Course</option>
+          <option value="Arabic Course for Kids">Arabic Course for Kids</option>
+          <option value="Arabic Course for Adults">Arabic Course for Adults</option>
+          <option value="Arabic Conversation Course">Arabic Conversation Course</option>
+          <option value="Arabic Grammar Course">Arabic Grammar Course</option>
+          <option value="Islamic Studies for Kids">Islamic Studies for Kids</option>
+          <option value="Islamic Studies for Adults">Islamic Studies for Adults</option>
+          <option value="Noorani Qaida Course">Noorani Qaida Course</option>
+          <option value="New Muslim Converts Course">New Muslim Converts Course</option>
+          <option value="Quran for Kids Course">Quran for Kids Course</option>
+          <option value="Quran with Tajweed Course">Quran with Tajweed Course</option>
+          <option value="Quran Memorization Course">Quran Memorization Course</option>
+          <option value="Quran Hifz Course">Quran Hifz Course</option>
+          <option value="Quran Recitation Course">Quran Recitation Course</option>
+          <option value="Quran Ijazah Course">Quran Ijazah Course</option>
+          <option value="Tajweed Rules Course">Tajweed Rules Course</option>
+          <option value="Tafseer Quran Course">Tafseer Quran Course</option>
+          <option value="10 Qiraat Quran Course">10 Qiraat Quran Course</option>
+          <option value="Modern Standard Arabic">Modern Standard Arabic</option>
+
+        </select>
+
+        <div id="course-container" class="selected-courses-container"></div>
+
+        <input
+          type="hidden"
+          name="course"
+          id="selected-courses"
+          required
+        />
+
+        <small
+          class="text-danger d-none"
+          id="course-error"
+        >
+          Choose one or more courses.
+        </small>
+
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+
+        <label for="message">Message:</label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Tell us more about your learning goals!"
+        ></textarea>
+
+      </div>
+
+      <!-- Submit -->
+      <input type="submit" value="Submit" />
+
+    </form>
+
+    <!-- Success Message -->
+    <div id="hover-message">
+      Successfully Registered. We will contact you soon.
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <%- include("layout/footer") -%>
+
+  <!-- Scripts -->
+  <script>
+
+    // =========================
+    // Form Validation
+    // =========================
+
+    const registrationForm = document.getElementById("registration_form");
+
+    registrationForm.addEventListener("submit", function (event) {
+
+      const name = document.getElementById("name").value.trim();
+      const country = document.getElementById("country").value.trim();
+      const city = document.getElementById("city").value.trim();
+
+      const lettersOnly = /^[A-Za-z\s]+$/;
+
+      if (!lettersOnly.test(name)) {
+        alert("Please enter only letters and spaces for Full Name.");
+        event.preventDefault();
+        return;
+      }
+
+      if (!lettersOnly.test(country)) {
+        alert("Please enter only letters and spaces for Country.");
+        event.preventDefault();
+        return;
+      }
+
+      if (!lettersOnly.test(city)) {
+        alert("Please enter only letters and spaces for City.");
+        event.preventDefault();
+        return;
+      }
+
+      if (selectedCourses.length === 0) {
+        errorText.classList.remove("d-none");
+        event.preventDefault();
+        return;
+      }
+
+      // Success Message
+      document.getElementById("hover-message").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("hover-message").style.display = "none";
+      }, 4000);
+
+    });
+
+    // =========================
+    // Prevent Invalid Characters
+    // =========================
+
+    ["name", "country", "city"].forEach((fieldId) => {
+
+      const field = document.getElementById(fieldId);
+
+      field.addEventListener("input", function (event) {
+        event.target.value = event.target.value.replace(/[^A-Za-z\s]/g, "");
+      });
+
+    });
+
+    // =========================
+    // Multi Course Selection
+    // =========================
+
+    const courseSelect = document.getElementById("course");
+    const courseContainer = document.getElementById("course-container");
+    const selectedCoursesInput = document.getElementById("selected-courses");
+    const errorText = document.getElementById("course-error");
+
+    let selectedCourses = [];
+
+    courseSelect.addEventListener("change", function () {
+
+      const selectedValue = this.value;
+
+      if (
+        selectedValue &&
+        !selectedCourses.includes(selectedValue)
+      ) {
+
+        selectedCourses.push(selectedValue);
+
+        updateSelectedCourses();
+
+        const selectedOption = this.querySelector(
+          `option[value="${selectedValue}"]`
+        );
+
+        if (selectedOption) {
+          selectedOption.style.display = "none";
+        }
+
+      }
+
+    });
+
+    function updateSelectedCourses() {
+
+      courseContainer.innerHTML = "";
+
+      selectedCourses.forEach((course) => {
+
+        const courseTag = document.createElement("div");
+
+        courseTag.classList.add("selected-course");
+
+        courseTag.innerHTML = `
+          ${course}
+          <button type="button" onclick="removeCourse('${course}')">
+            &times;
+          </button>
+        `;
+
+        courseContainer.appendChild(courseTag);
+
+      });
+
+      selectedCoursesInput.value = selectedCourses.join(", ");
+
+      validateSelection();
+
+    }
+
+    function removeCourse(course) {
+
+      selectedCourses = selectedCourses.filter(
+        (c) => c !== course
+      );
+
+      const option = courseSelect.querySelector(
+        `option[value="${course}"]`
+      );
+
+      if (option) {
+        option.style.display = "block";
+      }
+
+      updateSelectedCourses();
+
+    }
+
+    function validateSelection() {
+
+      if (selectedCourses.length === 0) {
+        errorText.classList.remove("d-none");
+      } else {
+        errorText.classList.add("d-none");
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>

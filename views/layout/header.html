@@ -1,0 +1,42 @@
+<nav>
+    <div class="logo">
+        <a id="web-logo" href="#hero">
+            <img src="./images/logo.png" alt="Dar Arqam Logo" />
+        </a>
+        <a id="web-name" href="./index.html">Dar Arqam</a>
+    </div>
+
+    <button class="menu-button"><i class="fa fa-2xl fa-bars"></i></button>
+
+    <ul class="nav-links">
+        <li>
+            <a href="https://wa.me/201070235903" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </li>
+
+        <li><a href="#about">About</a></li>
+        <li><a href="#course">Courses</a></li>
+        <li><a href="./tuitions.html">Tuitions</a></li>
+        <li><a href="#" id="contactLink">Contact</a></li>
+
+        <li>
+            <a href="./trial.html">
+                <button id="trialButton2">TRY FOR FREE</button>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const contactLink = document.getElementById("contactLink");
+
+    if (contactLink) {
+        contactLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        });
+    }
+});
+</script>

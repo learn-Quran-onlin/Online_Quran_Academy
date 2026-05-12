@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dar Arqam</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Learn more about Dar Arqam Academy, a leading online platform for Quran, Arabic, and Islamic Studies education with expert tutors.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="icon" href="./images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="./images/favicon-32x32.png" sizes="32x32">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/homeStyle.css" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .about-page {
+            position: relative;
+            background-image: url('./images/about2.png');
+            justify-content: center;
+        }
+
+        .about-content {
+            position: relative;
+            max-width: 1000px;
+            padding-top: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+            padding-bottom: 70px;
+        }
+
+        .about-border {
+            margin: 20px;
+        }
+
+        .about-header {
+            font-size: 36px;
+            color: #944794;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .about-container p {
+            font-size: 19px;
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma;
+            color: rgb(48, 48, 48);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header"></div>
+
+<section class="about-page" id="about-p">
+    <div class="about-content">
+        <h2 class="about-header">About Dar Arqam</h2>
+
+        <div class="about-container">
+            <div class="about-border">
+
+                <p>
+                All praise is due to Allah. Welcome to our esteemed academy, Dar
+                Arqam, where the timeless beauty of the Quran and the richness of
+                the Arabic language come alive in the digital realm. We are a
+                pioneering institution dedicated to providing remote education in
+                Quranic studies, Islamic studies, and the Arabic language,
+                empowering students from all corners of the globe to embark on a
+                transformative journey of learning and discovery. The Messenger of
+                Allah (ﷺ) said: "Whoever takes a path upon which to obtain
+                knowledge, Allah makes the path to Paradise easy for him."
+              </p><br>
+              <p>
+                At our academy, we understand the importance of preserving and
+                implementing the teachings of the Quran as it was revealed, as
+                well as learning the Prophetic Sunnah and fostering a deep
+                understanding of the Arabic language. All of these elements work
+                together to shape the individual and the Muslim community. With a
+                team of highly qualified teachers, sheikh, educators, and language
+                experts, we strive to create a virtual learning environment that
+                nourishes intellectual growth, spiritual enlightenment, and
+                linguistic proficiency. We are committed to providing a comprehensive 
+                online Quranic and Arabic learning experience. Our methodology focuses
+                on personalized instruction, interactive classes, and the integration
+                of modern technology.
+              </p><br>
+              <p>
+                Our curriculum revolves around the Quranic sciences, including
+                Recitation, Tafsir (interpretation), Tajweed (the correct
+                pronunciation and recitation of the Quran), Memorization, and
+                Ijazah enabling students to develop a profound connection with the
+                divine words. Also, we mean by teaching Islamic studies and Sunnah
+                including Aqeedah, Hadith, Seerah, and Fiqh. Simultaneously, we
+                offer comprehensive Arabic language courses, ranging from
+                foundational grammar to advanced proficiency, equipping learners
+                with the tools to understand and appreciate the linguistic nuances
+                of the Quran and other Islamic texts.
+              </p><br>
+              <p>
+                One of the defining features of our academy is our commitment 
+                to remote education. We recognize that individuals around the world 
+                may face various constraints that limit their access to traditional 
+                brick-and-mortar institutions. Therefore, we have harnessed the power of 
+                technology to bring the essence of an in-person learning experience 
+                to the comfort of your own home. Through our innovative 
+                online platform, students can engage in real-time interactive 
+                sessions, access a rich repository of educational resources, 
+                and benefit from personalized guidance, all while maintaining the flexibility 
+                to adapt their studies to their schedules and circumstances.
+              </p><br>
+              <p>
+                What truly sets our academy apart is our unwavering commitment
+                to academic excellence, authenticity, and integrity. 
+                Our instructors are experts in their respective fields, 
+                possessing deep knowledge of the Quran, the Arabic language, 
+                and Islamic studies. They are dedicated to delivering engaging 
+                and impactful lessons that cater to students of all ages 
+                and proficiency levels, ensuring an inclusive and supportive 
+                learning environment.
+              </p><br>
+              <p>
+                Regardless of your background or previous experience,
+                our academy welcomes learners from diverse cultural and 
+                linguistic backgrounds. Whether you are a beginner taking 
+                your first steps in understanding the Quran or an advanced 
+                student seeking to refine your recitation or delve deeper 
+                into Arabic literature, our programs are designed to cater 
+                to your specific needs and aspirations.
+              </p><br>
+              <p>
+                Join us and embark on a transformative educational journey 
+                that will enrich your mind, nourish your soul, and empower
+                you to connect with the divine message and the cultural heritage
+                of the Arab world. Whether you are a beginner taking your first
+                steps in understanding the Quran or an advanced student seeking to
+                refine your recitation or delve deeper into Arabic literature.
+                Together, let us unlock the beauty and wisdom encapsulated in the
+                words of the Quran and embark on a lifelong pursuit of knowledge,
+                all from the comfort of your own home.
+              </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Include Header & Footer -->
+<script>
+fetch('./header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+
+fetch('./footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+
+    const year = document.getElementById("year");
+    if (year) year.innerHTML = new Date().getFullYear();
+  });
+</script>
+
+<!-- Cookie -->
+<script>
+function setSecureCookie(cookieName, cookieValue, expirationDays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/;Secure";
+}
+
+setSecureCookie("DarArqamCookie", "DarArqamValue", 30);
+</script>
+
+</body>
+</html>
