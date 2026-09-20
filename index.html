@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Google tag (gtag.js) -->
@@ -98,7 +98,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
-  <script src="/javaScript/homeScript.js"></script>
+  <script src="/javaScript/homeScript.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16468014061">
@@ -111,7 +111,7 @@
   gtag('config', 'AW-16468014061');
 </script>
 
-<!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le-PxUqAAAAAH36yAEY-tMAWqU5TaVRWaUdts1W"></script> -->
+<!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le-PxUqAAAAAH36yAEY-tMAWqU5TaVRWaUdts1W" defer></script> -->
 
 
 </head>
@@ -184,7 +184,9 @@ fetch('./header.html')
 
 <body>
   <!-- Navbar -->
-  <div id="header"></div>
+  <div id="header">
+</div>
+<main>
 
     <!-- Hero -->
     <section class="hero" id="hero">
@@ -286,14 +288,18 @@ fetch('./header.html')
         <div class="welcome-container">
             <div class="welcome-video">
                 <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/mlv6ekBnbWQ" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
+                    <div class="youtube-lite" data-id="mlv6ekBnbWQ" style="position:relative;padding-bottom:56.25%;cursor:pointer;background:#000;">
+<img src="https://i.ytimg.com/vi/mlv6ekBnbWQ/hqdefault.jpg" alt="Dar Arqam Online Quran Academy introduction video" loading="lazy" style="width:100%;height:100%;position:absolute;object-fit:cover;opacity:0.8;">
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#ff0000;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+<svg viewBox="0 0 24 24" width="28" fill="white"><polygon points="9.5,7 9.5,17 17,12"/></svg>
+</div>
+</div>
+<script>
+document.querySelector('.youtube-lite').addEventListener('click', function() {
+var id = this.dataset.id;
+this.innerHTML = '<iframe width="100%" height="100%" style="position:absolute;top:0;left:0;" src="https://www.youtube.com/embed/'+id+'?autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>';
+});
+</script>
                 </div>
             </div>
 
@@ -321,12 +327,12 @@ fetch('./header.html')
               Qur'an, Dar Arqam is the right place for you</p>
         </div>
         <div class="image-box">
-            <img height="500" width="500" loading="lazy" src="images/q2.png" alt="Child reading Quran with confidence after online lessons">
+            <img height="500" width="500" loading="lazy" src="images/q2.webp" alt="Child reading Quran with confidence after online lessons">
         </div>
     </div>
       <div class="question-image-wrapper">
           <div class="image-box">
-              <img height="500" width="500" loading="lazy" src="images/q3.png" alt="Muslim child learning Quran meaning and Islamic values online">
+              <img height="500" width="500" loading="lazy" src="images/q3.webp" alt="Muslim child learning Quran meaning and Islamic values online">
           </div>
           <div class="question-box">
               <p class="question">Is your child learning the Qur’an but not acting upon it?</p>
@@ -345,12 +351,12 @@ fetch('./header.html')
               ensuring success at every level.</p>
         </div>
         <div class="image-box">
-            <img height="500" width="500" loading="lazy" src="images/q4.png" alt="Arabic language online course with native Arab tutor">
+            <img height="500" width="500" loading="lazy" src="images/q4.webp" alt="Arabic language online course with native Arab tutor">
         </div>
     </div>
       <div class="question-image-wrapper">
         <div class="image-box">
-            <img height="500" width="500" loading="lazy" src="images/q5.png" alt="Online Quran recitation and Tajweed course with certified teacher">
+            <img height="500" width="500" loading="lazy" src="images/q5.webp" alt="Online Quran recitation and Tajweed course with certified teacher">
         </div>
         <div class="question-box">
             <p class="question">Do you want to recite and memorize the Quran with Tajweed?</p>
@@ -367,12 +373,12 @@ fetch('./header.html')
               including Quran Memorization, Quran Recitation, Tajweed Rules, Ijazah, and the 10 Qiraat program.</p>
         </div>
         <div class="image-box">
-            <img height="500" width="500" loading="lazy" src="images/q1.png" alt="Student learning Quran online at home with Dar Arqam">
+            <img height="500" width="500" loading="lazy" src="images/q1.webp" alt="Student learning Quran online at home with Dar Arqam">
         </div>
     </div>
       <div class="question-image-wrapper">
         <div class="image-box">
-            <img height="500" width="500" loading="lazy" src="images/q3.png" alt="Muslim child learning Quran meaning and Islamic values online">
+            <img height="500" width="500" loading="lazy" src="images/q3.webp" alt="Muslim child learning Quran meaning and Islamic values online">
         </div>
         <div class="question-box">
             <p class="question">Do you want to teach your child the Islamic Studies?</p>
@@ -459,44 +465,44 @@ fetch('./header.html')
   <p id="course"></p>
   <br><br>
   <div class="courses">
-  <h1 class="courses-headline">20+ Online Courses</h1>
+  <h2 class="courses-headline">20+ Online Courses</h2>
   <div class="container1">
     <div class="course">
       <a href="./courses.html" class="course-title">Quran and Tajweed Courses</a>
-      <a href="./courses.html"><img height="2880" width="2867" loading="lazy" src="images/Ijazah.jpeg" alt="Ijazah online Quran certification course - Dar Arqam" /></a>
+      <a href="./courses.html"><img height="2880" width="2867" loading="lazy" src="images/Ijazah.webp" alt="Ijazah online Quran certification course - Dar Arqam" /></a>
       <div class="overlay">
         <h3 class="sub-title">Quran and Tajweed</h3>
-        <h4 class="one">Quran Memorization Program, 
+        <h3 class="one">Quran Memorization Program, 
           Quran Recitation Course, Hifz Course, 
           Tajweed, Ijazah, and 10 Qiraat. 
           Offering the best online Quran classes 
-          tailored for all ages and skill levels.</h4>
-          <a href="./courses.html"><button class="see-all-courses">See All Courses</button></a>
+          tailored for all ages and skill levels.</h3>
+          <a href="./courses.html"><button class="see-all-courses">Browse All Quran & Arabic Courses</button></a>
       </div>
     </div>
     <div class="course">
       <a href="./courses.html" class="course-title">Arabic Language Courses</a>
-      <a href="./courses.html"><img height="615" width="1024" loading="lazy" src="images/course4.jpg" alt="Arabic language online courses for kids and adults" /></a>
+      <a href="./courses.html"><img height="615" width="1024" loading="lazy" src="images/course4.webp" alt="Arabic language online courses for kids and adults" /></a>
       <div class="overlay">
         <h3 class="sub-title">Arabic Language</h3>
-        <h4 class="one">Learn to Read, Write, and Speak 
+        <h3 class="one">Learn to Read, Write, and Speak 
           Arabic Online with Native Arab Tutors. 
           Courses include Noorani Qaida, Arabic for Kids, 
           Quranic Arabic, Modern Standard Arabic, 
-          Egyptian Dialect, and Arabic Conversation.</h4>
-          <a href="./courses.html"><button class="see-all-courses">See All Courses</button></a>
+          Egyptian Dialect, and Arabic Conversation.</h3>
+          <a href="./courses.html"><button class="see-all-courses">Browse All Quran & Arabic Courses</button></a>
       </div>
     </div>
     <div class="course">
       <a href="./courses.html" class="course-title">Islamic studies Courses</a>
-      <a href="./courses.html"><img height="539" width="958" loading="lazy" src="images/course5.jpg" alt="Online Islamic studies courses - Tafseer, Fiqh, Aqeedah" /></a>
+      <a href="./courses.html"><img height="539" width="958" loading="lazy" src="images/course5.webp" alt="Online Islamic studies courses - Tafseer, Fiqh, Aqeedah" /></a>
       <div class="overlay">
         <h3 class="sub-title">Islamic studies</h3>
-        <h4 class="one">This Online Islamic Course offers 
+        <h3 class="one">This Online Islamic Course offers 
           a comprehensive range of topics, including Tafseer, 
           Fiqh, Aqeedah, Hadith, and more. The course is structured 
-          into levels, progressing from basic to advanced.</h4>
-        <a href="./courses.html"><button class="see-all-courses">See All Courses</button></a>
+          into levels, progressing from basic to advanced.</h3>
+        <a href="./courses.html"><button class="see-all-courses">Browse All Quran & Arabic Courses</button></a>
       </div>
     </div>
   </div>
@@ -519,7 +525,7 @@ fetch('./header.html')
                 his teachers mashallah! May it be in your scale 
                 of righteous deeds."
             </p>
-            <h4>Umm Muhammad & Abu Muhammad</h4>
+            <h3>Umm Muhammad & Abu Muhammad</h3>
             <span>USA</span>
         </div>
         <div class="testimonial-item">
@@ -529,7 +535,7 @@ fetch('./header.html')
                 at Dar Arqam Academy, the teacher has a nice 
                 manner and way of explaining."
             </p>
-            <h4>Najma Choudhery</h4>
+            <h3>Najma Choudhery</h3>
             <span>Luxembourg</span>
         </div>
         <div class="testimonial-item">
@@ -538,7 +544,7 @@ fetch('./header.html')
               recitation. The teachers at Dar Arqam are patient, knowledgeable, 
               and truly passionate about teaching. Highly recommended!"
             </p>
-            <h4>Fatima Al-Hassan</h4>
+            <h3>Fatima Al-Hassan</h3>
             <span>Canada</span>
         </div>
         <div class="testimonial-item">
@@ -549,7 +555,7 @@ fetch('./header.html')
               since he started working with you! 
               May Allah grant you all the rewards! Thank you!"
           </p>
-          <h4>Kadidia Mohamadou</h4>
+          <h3>Kadidia Mohamadou</h3>
           <span>USA</span>
       </div>
     </div>
@@ -565,43 +571,43 @@ fetch('./header.html')
   <h2 class="blog-section-title">Featured Articles</h2>
       <div class="blog-container">
         <article class="blog-card">
-          <img height="623" width="598" loading="lazy" src="images/blog4.png" alt="How to find a reliable Quran tutor online" class="blog-image">
+          <img height="623" width="598" loading="lazy" src="images/blog4.webp" alt="How to find a reliable Quran tutor online" class="blog-image">
           <div class="blog-content">
               <h3 class="blog-title">How To Find a Reliable Quran Tutor Online?</h3>
               <p class="blog-excerpt">Selecting the right Quran tutor is a vital step 
                 in your journey of learning the Quran. A skilled and reliable...</p>
-              <a href="articles/how-to-find-a-reliable-quran-tutor-online.html" class="read-more">Read More</a>
+              <a href="articles/how-to-find-a-reliable-quran-tutor-online.html" class="read-more" aria-label="Read more about How To Find a Reliable Quran Tutor Online?">Read More</a>
           </div>
         </article>
         <article class="blog-card">
-          <img height="539" width="958" loading="lazy" src="images/course5.jpg" alt="Online Islamic studies courses - Tafseer, Fiqh, Aqeedah" class="blog-image">
+          <img height="539" width="958" loading="lazy" src="images/course5.webp" alt="Online Islamic studies courses - Tafseer, Fiqh, Aqeedah" class="blog-image">
           <div class="blog-content">
               <h3 class="blog-title">The Importance of Islamic Education</h3>
               <p class="blog-excerpt">Islamic education is one of the key foundations upon which Islam 
                 has built its system of values and ethics for more than 1400 years...</p>
-              <a href="articles/the-importance-of-islamic-education.html" class="read-more">Read More</a>
+              <a href="articles/the-importance-of-islamic-education.html" class="read-more" aria-label="Read more about The Importance of Islamic Education">Read More</a>
           </div>
         </article>
         <article class="blog-card">
-          <img height="2880" width="2867" loading="lazy" src="images/Ijazah.jpeg" alt="Ijazah online Quran certification course - Dar Arqam" class="blog-image">
+          <img height="2880" width="2867" loading="lazy" src="images/Ijazah.webp" alt="Ijazah online Quran certification course - Dar Arqam" class="blog-image">
           <div class="blog-content">
               <h3 class="blog-title">How To Become A Qari of the Quran?</h3>
               <p class="blog-excerpt">Becoming a Qari of the Quran is a noble and rewarding achievement, bringing immense blessings from Allah. It requires...</p>
-              <a href="articles/how-to-become-a-qari-of-the-quran.html" class="read-more">Read More</a>
+              <a href="articles/how-to-become-a-qari-of-the-quran.html" class="read-more" aria-label="Read more about How To Become A Qari of the Quran?">Read More</a>
           </div>
         </article>
         <article class="blog-card">
-          <img height="685" width="885" loading="lazy" src="images/blog2.png" alt="Benefits of becoming a Hafiz of the Quran" class="blog-image">
+          <img height="685" width="885" loading="lazy" src="images/blog2.webp" alt="Benefits of becoming a Hafiz of the Quran" class="blog-image">
           <div class="blog-content">
               <h3 class="blog-title">Benefits of Becoming a Hafiz</h3>
               <p class="blog-excerpt">When you memorize the Quran, leading prayers 
                 becomes second nature. A Hafiz can confidently recite long Surahs...</p>
-              <a href="articles/benefits-of-becoming-a-hafiz.html" class="read-more">Read More</a>
+              <a href="articles/benefits-of-becoming-a-hafiz.html" class="read-more" aria-label="Read more about Benefits of Becoming a Hafiz">Read More</a>
           </div>
         </article>
       </div>
       <a href="./blog.html">
-        <button id="see-all-articles">See All Articles</button>
+        <button id="see-all-articles">Read All Quran & Islamic Articles</button>
       </a>      
   </section>
 
@@ -670,7 +676,9 @@ fetch('./header.html')
 
     <!-- Links -->
     <!-- Footer -->
-    <div id="footer"></div>
+    
+</main>
+<div id="footer"></div>
 
       <!-- JavaScript -->
       <script>
@@ -711,7 +719,7 @@ fetch('./header.html')
       });
       
       </script>
-      <script src="/javaScript/homeScript.js"></script>
+      <script src="/javaScript/homeScript.js" defer></script>
 
       <script>
         // cookie
